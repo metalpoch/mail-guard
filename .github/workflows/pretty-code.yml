@@ -1,4 +1,4 @@
-name: Prettier Code
+name: Pretty Code 🎀
 on:
   push:
     branches: [ "main" ]
@@ -32,7 +32,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.PULL_REQUEST_ACTION }}
-          title: "Prettier"
+          title: "Code Formater 🤖 BeepBoop"
           commit-message: "style(🤖): 🎨 scripts formated with Prettier"
           body: |
             There seems to be some formatting issues with this pull request. I have auto formatted the code using Prettier. Review the changes and merge this pull request if that's okay with you.
