@@ -31,8 +31,9 @@ jobs:
         if: steps.changes.outputs.is_formatted == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
+          branch: "code-formated-by-prettier-using-github-actions"
           token: ${{ secrets.PULL_REQUEST_ACTION }}
-          title: "Code Formater 🤖 BeepBoop"
+          title: "Code Formated 🤖 BeepBoop"
           commit-message: "style(🤖): 🎨 scripts formated with Prettier"
           body: |
             There seems to be some formatting issues with this pull request. I have auto formatted the code using Prettier. Review the changes and merge this pull request if that's okay with you.
