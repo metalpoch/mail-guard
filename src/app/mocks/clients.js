@@ -19,6 +19,6 @@ const clients = [
     perfil: "https://robohash.org/Alma?set=set3",
     message:
       "Mail Guard ha mejorado significativamente la eficacia de nuestro correo electrónico marketing.",
-  }
+  },
 ];
 export default clients;
