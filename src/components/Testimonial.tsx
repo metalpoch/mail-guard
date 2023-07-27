@@ -1,10 +1,10 @@
-import mockClients from "../mocks/clients";
+import mockClients from "@/mocks/clients";
 import ClientCard from "./ClientCard";
 
 export default function Testimonial() {
   return (
     <section>
-      <ClientCard clients={mockClients} />
+      <ClientCard testimonials={mockClients} />
       <div className="description">
         <h2>
           ¿Quieres verificar los correos electrónicos de tus contactos con
