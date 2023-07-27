@@ -1,0 +1,19 @@
+.base {
+  background-color: var(--bg-color-secondary);
+  height: calc(100vh - 8rem);
+}
+.base img {
+  align-self: start;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.detail h1 {
+  color: var(--color-white);
+}
+.detail p {
+  color: var(--text-color-light);
+}
