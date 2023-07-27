@@ -1,3 +1,5 @@
+'use client';
+
 import Navbar from "@/components/Navbar";
 import Introduction from "@/components/Introduction";
 import Testimonial from "@/components/Testimonial";
@@ -14,8 +16,10 @@ export default function Home() {
       <main>
         <Introduction />
         <Testimonial />
-        {!user && <LoginForm />}
-        {!user && <RegisterForm />}
+        <div className="p-10">
+          {!user && <LoginForm />}
+          {!user && <RegisterForm />}
+        </div>
       </main>
     </>
   );

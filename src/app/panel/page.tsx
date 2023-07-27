@@ -14,10 +14,6 @@ export default function Panel() {
     router.replace("/")
   };
 
-  if (!user) {
-    router.replace("/")
-  }
-
   return (
     <main className="flex flex-col min-h-screen p-10 lg:p-24 lg:gap-x-10 gap-y-10 max-w-screen-lg">
       <div className="flex justify-between">
