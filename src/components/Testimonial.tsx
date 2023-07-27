@@ -1,4 +1,4 @@
-import mockClients from "../mocks/clients";
+import mockClients from "@/mocks/clients";
 import ClientCard from "./ClientCard";
 
 export default function Testimonial() {
