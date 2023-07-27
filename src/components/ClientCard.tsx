@@ -1,10 +1,12 @@
 import Image from "next/image";
 import style from "./ClientCard.module.css";
+import type { Testimonials } from "@/lib/testimonial.types";
 
-export default function ClientCard({ clients }) {
+
+export default function ClientCard({testimonials }: {testimonials: Testimonials[]}) {
   return (
     <div className={style.testimonials}>
-      {clients.map((client) => (
+      {testimonials.map((client) => (
         <div key={client.name} className={style.client}>
           <Image
             src={client.perfil}
