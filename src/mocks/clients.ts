@@ -21,4 +21,5 @@ const clients = [
       "Mail Guard ha mejorado significativamente la eficacia de nuestro correo electrónico marketing.",
   },
 ];
+
 export default clients;
