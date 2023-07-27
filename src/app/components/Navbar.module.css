@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  /*position: fixed;*/
+  width: 100vw;
+  height: 8rem;
+  background-color: var(--bg-color-primary);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 5rem;
+}
+
+.logo h1 {
+  font-size: 28pt;
+  color: var(--color-white);
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 16pt;
+}

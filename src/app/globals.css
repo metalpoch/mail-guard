@@ -3,25 +3,56 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-white: #fff;
+  --color-black: #111;
+  --bg-color-primary: #2f5a78;
+  --bg-color-secondary: #006583;
+  --bg-color-success: #309167;
+  --bg-color-danger: #bf3838;
+  --text-color-dark: #444;
+  --text-color-light: #ccc;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/*
+ *@media (prefers-color-scheme: dark) {
+ *  :root {
+ *    --foreground-rgb: 255, 255, 255;
+ *    --background-start-rgb: 0, 0, 0;
+ *    --background-end-rgb: 0, 0, 0;
+ *  }
+ *}*/
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text-color-dark);
+  background: var(--color-white);
+}
+
+section {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8rem;
+  padding: 0 10rem;
+}
+
+h1,
+h2 {
+  font-size: 32pt;
+  font-weight: bold;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+
+h1 {
+  font-size: 32pt;
+}
+
+h2 {
+  font-size: 29pt;
+}
+
+p {
+  font-size: 24pt;
+  text-align: justify;
+  text-justify: distribute-all-lines;
 }
