@@ -2,8 +2,12 @@
   background-color: var(--bg-color-secondary);
   height: calc(100vh - 8rem);
 }
+
 .introduction img {
-  align-self: start;
+  position: absolute;
+  right: 8em;
+  top: 8em;
+  width: 20%;
 }
 
 .introduction h1 {

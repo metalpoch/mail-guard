@@ -28,11 +28,12 @@ body {
 
 section {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8rem;
-  padding: 0 10rem;
+  gap: 2rem;
+  padding: 1em 10rem;
 }
 
 h1,
@@ -43,21 +44,23 @@ h2 {
 }
 
 h1 {
-  font-size: 32pt;
+  font-size: calc(32px + 0.390625vw);
 }
 
 h2 {
-  font-size: 29pt;
+  font-size: calc(28px + 0.390625vw);
 }
 
 p {
-  font-size: 24pt;
+  font-size: calc(16px + 0.390625vw);
   text-align: justify;
   text-justify: distribute-all-lines;
 }
 
 .description {
   display: flex;
+  flex-wrap: wrap;
+  width: 50vw;
   flex-direction: column;
   gap: 2em;
 }

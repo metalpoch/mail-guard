@@ -1,8 +1,9 @@
 .testimonials {
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  height: 100%;
+  gap: 1em;
+  width: 25vw;
+  height: 90%;
   align-items: center;
   justify-content: space-between;
   overflow-y: auto;
@@ -42,5 +43,5 @@
 }
 
 .body {
-  font-size: 0.9em;
+  font-size: 1em;
 }

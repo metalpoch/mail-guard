@@ -19,13 +19,6 @@ const clients = [
     perfil: "https://robohash.org/Alma?set=set3",
     message:
       "Mail Guard ha mejorado significativamente la eficacia de nuestro correo electrónico marketing.",
-  },
-  {
-    name: "Inés Esario",
-    ranking: 4,
-    perfil: "https://robohash.org/Esario?set=set3",
-    message:
-      "Mail Guard nos ha ayudado a mantener una base de datos de clientes más limpia y confiable, eliminando las direcciones de correo electrónico temporales y no válidas.",
-  },
+  }
 ];
 export default clients;
