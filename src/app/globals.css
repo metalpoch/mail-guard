@@ -3,25 +3,64 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-white: #fff;
+  --color-black: #111;
+  --bg-color-primary: #2f5a78;
+  --bg-color-secondary: #006583;
+  --bg-color-success: #309167;
+  --bg-color-danger: #bf3838;
+  --text-color-dark: #444;
+  --text-color-light: #ccc;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/*
+ *@media (prefers-color-scheme: dark) {
+ *  :root {
+ *    --foreground-rgb: 255, 255, 255;
+ *    --background-start-rgb: 0, 0, 0;
+ *    --background-end-rgb: 0, 0, 0;
+ *  }
+ *}*/
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text-color-dark);
+  background: var(--color-white);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  gap: 2rem;
+  padding: 1em 10rem;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+
+h1 {
+  font-size: calc(32px + 0.390625vw);
+}
+
+h2 {
+  font-size: calc(28px + 0.390625vw);
+}
+
+p {
+  font-size: calc(16px + 0.390625vw);
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+
+.description {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50vw;
+  flex-direction: column;
+  gap: 2em;
 }
