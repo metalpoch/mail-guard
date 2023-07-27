@@ -37,7 +37,6 @@ section {
 
 h1,
 h2 {
-  font-size: 32pt;
   font-weight: bold;
   text-align: justify;
   text-justify: distribute-all-lines;
@@ -55,4 +54,10 @@ p {
   font-size: 24pt;
   text-align: justify;
   text-justify: distribute-all-lines;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }

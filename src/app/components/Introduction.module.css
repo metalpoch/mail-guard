@@ -1,19 +1,14 @@
-.base {
+.introduction {
   background-color: var(--bg-color-secondary);
   height: calc(100vh - 8rem);
 }
-.base img {
+.introduction img {
   align-self: start;
 }
 
-.detail {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-.detail h1 {
+.introduction h1 {
   color: var(--color-white);
 }
-.detail p {
+.introduction p {
   color: var(--text-color-light);
 }

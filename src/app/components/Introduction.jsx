@@ -3,8 +3,8 @@ import style from "./Introduction.module.css";
 
 export default function Introduction() {
   return (
-    <section className={style.base}>
-      <div className={style.detail}>
+    <section className={style.introduction}>
+      <div className="description">
         <h1>Protegemos y optimizamos la integridad de tus contactos</h1>
         <p>
           No dejes que los correos electrónicos temporales o sospechosos
