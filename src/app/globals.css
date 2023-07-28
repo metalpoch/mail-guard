@@ -57,6 +57,16 @@ p {
   text-justify: distribute-all-lines;
 }
 
+.btn {
+  width: 10em;
+  height: 3em;
+  border-radius: 10px;
+}
+
+.btn-success {
+  background: var(--bg-color-success);
+  color: var(--color-white);
+}
 .description {
   display: flex;
   flex-wrap: wrap;
