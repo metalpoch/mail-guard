@@ -32,6 +32,9 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           branch: "code-formated-by-prettier-using-github-actions"
+          labels: |
+            prettier
+            automated pr
           token: ${{ secrets.PULL_REQUEST_ACTION }}
           title: "Code Formated 🤖 BeepBoop"
           commit-message: "style(🤖): 🎨 scripts formated with Prettier"
