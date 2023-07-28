@@ -1,10 +1,30 @@
-import mockClients from "@/mocks/clients";
-import ClientCard from "./ClientCard";
+import Image from "next/image";
+import style from "./Testimonial.module.css";
+import clients from "@/mocks/clients";
+import type { Client } from "@/lib/components.types";
 
 export default function Testimonial() {
   return (
     <section>
-      <ClientCard testimonials={mockClients} />
+      <div className={style.testimonials}>
+        {clients.map((client: Client) => (
+          <div key={client.name} className={style.client}>
+            <Image
+              src={client.perfil}
+              height={163}
+              width={163}
+              alt={`Picture of ${client.name}`}
+            />
+            <div className={style.card}>
+              <p className={style.ranking}>{`${"⭐".repeat(
+                client.ranking
+              )}`}</p>
+              <p className={style.body}>{client.message}</p>
+              <p className={style.name}>{client.name}</p>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="description">
         <h2>
           ¿Quieres verificar los correos electrónicos de tus contactos con
