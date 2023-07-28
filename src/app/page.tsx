@@ -3,7 +3,9 @@
 import Navbar from "@/components/Navbar";
 import Introduction from "@/components/Introduction";
 import Testimonial from "@/components/Testimonial";
+import SignUp from "@/components/SignUp";
 import Pricing from "@/components/Pricing";
+
 import LoginForm from "@/components/LoginForm";
 import RegisterForm from "@/components/RegisterForm";
 
@@ -16,6 +18,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
+        <SignUp />
         <Introduction />
         <Testimonial />
         <Pricing />
