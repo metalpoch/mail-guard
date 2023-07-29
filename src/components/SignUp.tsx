@@ -23,7 +23,7 @@ export default function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSignUp}>
+    <form onSubmit={handleSignUp} method="POST">
       <div>
         <label htmlFor="sign-up-email">Correo electrónico</label>
         <input
