@@ -1,10 +1,9 @@
-import Image from "next/image";
+import { useState } from "react";
 import { useSupabase } from "@/hooks/useSupabase";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import style from "./SignUp.module.css";
+import Modal from "./Modal";
 
-function RegisterForm() {
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setpasswordConfirmation] = useState("");
@@ -30,62 +29,53 @@ function RegisterForm() {
   };
 
   return (
-    <div className={style.background}>
-      <div className={style.card}>
-        <Image
-          src="/assets/mailGuard.webp"
-          width={200}
-          height={200}
-          alt="Mail Guard logo"
+    <form onSubmit={handleSignUp}>
+      <div>
+        <label htmlFor="sign-up-email">Correo electrónico</label>
+        <input
+          id="sign-up-email"
+          type="email"
+          placeholder="palito@mantequillero.com"
+          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          value={email}
         />
-        <h2>Unete a la guardia </h2>
-        <form onSubmit={handleSignUp}>
-          <div>
-            <label htmlFor="sign-up-email">Correo electrónico</label>
-            <input
-              id="sign-up-email"
-              type="email"
-              placeholder="email"
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              value={email}
-            />
-          </div>
-          <div>
-            <label htmlFor="sign-up-password">Contraseña</label>
-            <input
-              id="sign-up-password"
-              placeholder="*********"
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              name="password"
-              value={password}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="sign-up-password-confirmation">
-              Confirmar contraseña
-            </label>
-            <input
-              id="sign-up-password-confirmation"
-              placeholder="*********"
-              type="password"
-              onChange={(e) => setpasswordConfirmation(e.target.value)}
-              name="passwordConfirmation"
-              value={passwordConfirmation}
-            />
-          </div>
-          <div>
-            <input
-              type="submit"
-              className="btn btn-success"
-              value="Registrarse"
-            />
-          </div>
-        </form>
       </div>
-    </div>
+      <div>
+        <label htmlFor="sign-up-password">Contraseña</label>
+        <input
+          id="sign-up-password"
+          placeholder="*********"
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          value={password}
+        />
+      </div>
+      <div className="flex flex-col">
+        <label htmlFor="sign-up-password-confirmation">
+          Confirmar contraseña
+        </label>
+        <input
+          id="sign-up-password-confirmation"
+          placeholder="*********"
+          type="password"
+          onChange={(e) => setpasswordConfirmation(e.target.value)}
+          name="passwordConfirmation"
+          value={passwordConfirmation}
+        />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          height: 75,
+          justifyContent: "flex-end",
+          alignItems: "end",
+        }}
+      >
+        <input type="submit" className="btn btn-success" value="Registrarse" />
+      </div>
+    </form>
   );
 }
-
-export default RegisterForm;
