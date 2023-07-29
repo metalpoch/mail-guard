@@ -22,7 +22,7 @@ export default function SignIn() {
   };
 
   return (
-    <form onSubmit={handleSignIn}>
+    <form onSubmit={handleSignIn} method="POST">
       <div>
         <label htmlFor="sign-in-email">Correo electrónico</label>
         <input
