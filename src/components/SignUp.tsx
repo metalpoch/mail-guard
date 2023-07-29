@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { useSupabase } from "@/hooks/useSupabase";
 import { useRouter } from "next/navigation";
 
@@ -10,21 +10,16 @@ export default function SignUp() {
   const router = useRouter();
   const supabase = useSupabase();
 
-  // const handleSignUp = async () => {
-  //   await supabase.auth.signUp({
-  //     email,
-  //     password,
-  //     options: {
-  //       emailRedirectTo: `${location.origin}/auth/callback`,
-  //     },
-  //   });
-  //   router.refresh()
-  // };
-  const handleSignUp = async (e) => {
+  const handleSignUp = async (e: FormEvent) => {
     e.preventDefault();
-    alert(
-      `email: ${email} | password: ${password} | passwordConfirmation: ${passwordConfirmation}`
-    );
+    await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo: `${location.origin}/auth/callback`,
+      },
+    });
+    router.refresh();
   };
 
   return (

@@ -43,9 +43,14 @@ export default function Navbar({ openModal }: Props) {
         </li>
 
         {!user ? (
-          <li>
-            <button onClick={() => openModal("signin")}>Ingresar</button>
-          </li>
+          <>
+            <li>
+              <button onClick={() => openModal("signin")}>Ingresar</button>
+            </li>
+            <li>
+              <button onClick={() => openModal("signup")}>Registrar</button>
+            </li>
+          </>
         ) : (
           <div>
             <Link href="/dashboard">

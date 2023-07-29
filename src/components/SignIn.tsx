@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
+
 import Image from "next/image";
 import { useSupabase } from "@/hooks/useSupabase";
 import { useRouter } from "next/navigation";
@@ -7,30 +8,21 @@ import style from "./SignIn.module.css";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordConfirmation, setpasswordConfirmation] = useState("");
 
   const router = useRouter();
   const supabase = useSupabase();
 
-  // const handleSignUp = async () => {
-  //   await supabase.auth.signUp({
-  //     email,
-  //     password,
-  //     options: {
-  //       emailRedirectTo: `${location.origin}/auth/callback`,
-  //     },
-  //   });
-  //   router.refresh()
-  // };
-  const handleSignUp = async (e) => {
+  const handleSignIn = async (e: FormEvent) => {
     e.preventDefault();
-    alert(
-      `email: ${email} | password: ${password} | passwordConfirmation: ${passwordConfirmation}`
-    );
+    await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    router.refresh();
   };
 
   return (
-    <form onSubmit={handleSignUp}>
+    <form onSubmit={handleSignIn}>
       <div>
         <label htmlFor="sign-in-email">Correo electrónico</label>
         <input
@@ -59,12 +51,6 @@ export default function SignIn() {
 
       <div className={style.footer}>
         <input type="submit" className="btn btn-success" value="Ingresar" />
-        <p>
-          ¿No eres parte de la guardia aun?{" "}
-          <span className={style.link} onClick={() => alert("a")}>
-            Resgistrate aquí.
-          </span>
-        </p>
         <ul className={style.mediaAuth}>
           <li>
             <button>
