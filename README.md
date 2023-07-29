@@ -1,6 +1,6 @@
 # Mail Guard
 
-![Intro](https://readme-typing-svg.demolab.com?font=Fira+Code&color=1A54F7&size=14&duration=1000&multiline=true&repeat=false&width=435&lines=Protegemos+y+optimizamos;+la+integridad+de+tus+contactos.)
+![Intro](https://readme-typing-svg.demolab.com?font=Fira+Code&color=1A54F7&size=14&duration=2000&multiline=true&repeat=false&width=435&lines=Protegemos+y+optimizamos;+la+integridad+de+tus+contactos.)
 
 El mejor servicio para verificar la calidad y la seguridad de tus emails. Mail Guard es un servicio que te permite verificar si un email es de dudosa procedencia o un email temporal. Con una simple llamada a nuestra API, podrás saber si el email que quieres usar o contactar es válido, seguro y confiable.
 
