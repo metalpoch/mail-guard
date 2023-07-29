@@ -1,0 +1,77 @@
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1em;
+  width: 300px;
+  height: calc(500px + 2vw);
+  padding: 1em;
+  background-color: var(--bg-color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--text-color-light);
+  border-radius: 12px;
+  overflow-y: auto;
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.head img {
+  height: 20%;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.card label {
+  font-size: 0.7em;
+  padding-left: 1.1em;
+}
+
+.card :is(input[type="email"], input[type="password"]) {
+  width: 100%;
+  padding: 0.25em 1em;
+  border-radius: 20px;
+}
+
+.card input[type="submit"] {
+  height: 3em;
+  width: 6em;
+  cursor: pointer;
+}
+
+.cardinput[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.close {
+  align-self: flex-end;
+}

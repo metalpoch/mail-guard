@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+}
+
+.footer p,
+.recovery {
+  font-size: 70%;
+  align-self: center;
+  padding-top: 1em;
+}
+
+.recovery {
+  align-self: flex-start;
+  padding-left: 1em;
+}
+
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.link:hover,
+.recovery {
+  cursor: pointer;
+}
+
+.mediaAuth {
+  display: flex;
+  flex-wrap: wrap;
+  height: 50%;
+  width: 100%;
+  margin-top: 1em;
+  justify-content: space-evenly;
+}
+
+.mediaAuth img {
+  width: 2em;
+}
+
+.mediaAuth button {
+  border-radius: 50%;
+  padding: 0.35em;
+  background-color: #fff;
+}
