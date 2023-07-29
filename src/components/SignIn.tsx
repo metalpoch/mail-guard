@@ -2,7 +2,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSupabase } from "@/hooks/useSupabase";
 import { useRouter } from "next/navigation";
-import Modal from "./Modal";
 import style from "./SignIn.module.css";
 
 export default function SignIn() {

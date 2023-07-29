@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      <Navbar openModal={handleOpenModal} />
       <main>
         {modal && <Modal modal={modal} handle={handleCloseModal} />}
         <Introduction />

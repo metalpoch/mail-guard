@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSupabase } from "@/hooks/useSupabase";
 import { useRouter } from "next/navigation";
-import Modal from "./Modal";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
