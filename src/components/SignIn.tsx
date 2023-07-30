@@ -14,11 +14,16 @@ export default function SignIn() {
 
   const handleSignIn = async (e: FormEvent) => {
     e.preventDefault();
-    await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    router.refresh();
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      if (error) alert(error.message);
+      if (!error) router.replace("/dashboard");
+    } catch (error) {
+      alert(JSON.stringify(error));
+    }
   };
 
   return (
