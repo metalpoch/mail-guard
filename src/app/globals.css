@@ -21,6 +21,9 @@
  *  }
  *}*/
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: var(--text-color-dark);
   background: var(--color-white);
