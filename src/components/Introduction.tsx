@@ -3,7 +3,7 @@ import style from "./Introduction.module.css";
 
 export default function Introduction() {
   return (
-    <section className={style.introduction}>
+    <section id="intro" className={style.introduction}>
       <div className="description">
         <h1>Protegemos y optimizamos la integridad de tus contactos</h1>
         <p>

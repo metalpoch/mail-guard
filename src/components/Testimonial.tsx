@@ -5,7 +5,7 @@ import type { Client } from "@/lib/components.types";
 
 export default function Testimonial() {
   return (
-    <section>
+    <section id="testimonials">
       <div className={style.testimonials}>
         {clients.map((client: Client) => (
           <div key={client.name} className={style.client}>

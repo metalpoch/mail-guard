@@ -36,10 +36,10 @@ export default function Navbar({ openModal }: Props) {
           <Link href={"/"}>Inicio</Link>
         </li>
         <li>
-          <Link href={"/#testimonial"}>Testimonios</Link>
+          <Link href={"/#testimonials"}>Testimonios</Link>
         </li>
         <li>
-          <Link href={"/#doc"}>Planes</Link>
+          <Link href={"/#pricing"}>Planes</Link>
         </li>
 
         {!user ? (

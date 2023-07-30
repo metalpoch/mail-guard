@@ -5,7 +5,7 @@ import PaymentPlans from "@/mocks/paymentPlans";
 
 export default function Princing() {
   return (
-    <section style={{ height: "initial", flexDirection: "row" }}>
+    <section id="pricing" style={{ height: "initial", flexDirection: "row" }}>
       <h1 className={style.title}>Conoce nuestros planes</h1>
       <div className={style.wrapper}>
         <ul className={style.pricing}>
