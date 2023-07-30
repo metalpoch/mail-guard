@@ -1,3 +1,30 @@
+"use client";
+import Navbar from "@/components/Navbar";
+import { useRouter } from "next/navigation";
+import useUser from "@/hooks/useUser";
+import Profile from "@/components/dashboard/Profile";
+import Stats from "@/components/dashboard/Stats";
+import ApiKey from "@/components/dashboard/ApiKey";
+import Support from "@/components/dashboard/Support";
+
 export default function Dashboard() {
-  return <h1>Dashboard</h1>;
+  const router = useRouter();
+  const user = useUser();
+
+  // if (!user) router.replace("/404");
+  return (
+    <>
+      <Navbar user={user} />
+      {console.log(user)}
+      <main>
+        <h1 style={{ textAlign: "center" }}>Dashboard</h1>
+        <div className="dashboard-wrapper">
+          <Profile />
+          <ApiKey />
+          <Stats />
+          <Support />
+        </div>
+      </main>
+    </>
+  );
 }

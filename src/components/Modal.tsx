@@ -4,11 +4,6 @@ import style from "./Modal.module.css";
 import SignUp from "@/components/SignUp";
 import SignIn from "@/components/SignIn";
 
-// interface Props {
-//   children?: ReactNode;
-//   title: string;
-// }
-
 interface PropsModal {
   modal: string;
   handle: () => void;

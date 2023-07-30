@@ -36,7 +36,7 @@ section {
   justify-content: center;
   height: 100vh;
   gap: 2rem;
-  padding: 1em 10rem;
+  padding: 1em 10em;
 }
 
 h1,
@@ -80,4 +80,12 @@ input {
   width: 50vw;
   flex-direction: column;
   gap: 2em;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3em;
+  padding: 1em 2em;
 }
