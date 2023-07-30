@@ -1,0 +1,26 @@
+.profile {
+  flex-basis: 40vw;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info span {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bold {
+  font-weight: bold;
+}
+.info p {
+  width: 100%;
+  font-size: calc(18px + 0.390625vw);
+}

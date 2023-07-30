@@ -1,0 +1,30 @@
+.stats {
+  flex-basis: 40vw;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1em;
+}
+
+.data {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.data::before {
+  content: "";
+  position: absolute;
+  background-color: #ccc;
+  width: 100%;
+  height: 2em;
+  border-radius: 25px;
+  bottom: 0;
+}
+
+.chart {
+  height: 2em;
+  border-radius: 25px;
+  z-index: 1;
+}
