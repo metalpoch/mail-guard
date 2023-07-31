@@ -5,7 +5,7 @@ import style from "./Navbar.module.css";
 import Modal from "@/components/Home/Modal";
 
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/supabase-client";
 
 interface Props {
   user: object | null;
@@ -21,7 +21,6 @@ export default function Navbar({ user }: Props) {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    // router.replace("/");
     router.refresh();
   };
 
@@ -39,13 +38,13 @@ export default function Navbar({ user }: Props) {
         </div>
         <ul className={style.links}>
           <li>
-            <Link href={"/"}>Inicio</Link>
+            <Link href={"/"} replace={true} prefetch={true}>Inicio</Link>
           </li>
           <li>
-            <Link href={"/#testimonials"}>Testimonios</Link>
+            <Link href={"/#testimonials"} replace={true} prefetch={true}>Testimonios</Link>
           </li>
           <li>
-            <Link href={"/#pricing"}>Planes</Link>
+            <Link href={"/#pricing"} replace={true} prefetch={true}>Planes</Link>
           </li>
 
           {!user ? (

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import style from "./Pricing.module.css";
 import { Plan } from "@/lib/components.types";

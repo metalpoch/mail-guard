@@ -1,6 +1,6 @@
 "use client";
 
-import { createClient } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/supabase-client";
 import { useState } from "react";
 import styles from "./ResetPassword.module.css";
 import Image from "next/image";

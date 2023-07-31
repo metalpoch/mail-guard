@@ -1,4 +1,5 @@
-// import { ReactNode } from "react";
+'use client';
+
 import Image from "next/image";
 import style from "./Modal.module.css";
 import SignUp from "@/components/Home/Modal/SignUp";
