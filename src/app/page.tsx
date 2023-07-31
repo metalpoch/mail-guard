@@ -1,9 +1,8 @@
 import Home from "@/components/Home";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+import { createServerSupabaseClient } from "@/lib/supabase/supabase-server";
 
 export default async function HomePage() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerSupabaseClient();
 
   const {
     data: { user },

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import style from "@/components/Shared/Navbar/Navbar.module.css";
 import Link from "next/link";

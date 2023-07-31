@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import style from "./Testimonial.module.css";
 import clients from "@/mocks/clients";

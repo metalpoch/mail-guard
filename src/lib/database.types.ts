@@ -27,14 +27,17 @@ export interface Database {
       plans: {
         Row: {
           id: number
+          max_requests: number | null
           name: string
         }
         Insert: {
           id?: number
+          max_requests?: number | null
           name: string
         }
         Update: {
           id?: number
+          max_requests?: number | null
           name?: string
         }
         Relationships: []

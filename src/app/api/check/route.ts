@@ -1,12 +1,12 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { NextResponse } from "next/server";
 import { headers, cookies } from "next/headers";
-import {EMAIL_STATUS, ERRORS, EMAIL_REGEX} from "@/constants/api.constant"
+import { EMAIL_STATUS, ERRORS, EMAIL_REGEX } from "@/constants/api.constant"
 import type { NextRequest } from "next/server";
 import type { ApiError, Profile, Response } from "@/lib/api.types";
 import type { Database } from "@/lib/database.types";
 
-const formatUUID = (str:string) =>
+const formatUUID = (str: string) =>
   `${str.slice(0, 8)}-${str.slice(8, 12)}-${str.slice(12, 16)}-${str.slice(
     16,
     20
@@ -30,8 +30,10 @@ const getUser = async (supabase: any, token: string): Promise<Profile> => {
 
     return {
       id: user[0].id,
+      plan_id: user[0].plan_id,
+      plans: null,
       requests: user[0].requests,
-      max_requests: user[0].plan_id.max_requests,
+      // max_requests: user[0].plan_id.max_requests,
       last_payment: user[0].last_payment,
     };
   } catch (error) {
@@ -43,11 +45,13 @@ const getUser = async (supabase: any, token: string): Promise<Profile> => {
 const updateUserRequest = async (supabase: any, user: Profile): Promise<void> => {
   const { id, requests } = user;
   try {
-    const { error } = await supabase
-      .from("profiles")
-      .update({ requests: requests + 1 })
-      .eq("id", id);
-    if (error) throw error;
+    if (requests !== null) {
+      const { error } = await supabase
+        .from("profiles")
+        .update({ requests: requests + 1 })
+        .eq("id", id);
+      if (error) throw error;
+    }
   } catch (error) {
     console.warn(`error inside of updateUserRequest(supabase, ${user})`);
     throw error;

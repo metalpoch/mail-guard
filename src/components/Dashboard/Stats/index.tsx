@@ -1,3 +1,4 @@
+'use client';
 import style from "./Stats.module.css";
 
 interface Progress {
