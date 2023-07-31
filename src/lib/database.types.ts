@@ -47,19 +47,22 @@ export interface Database {
           id: string
           last_payment: string | null
           plan_id: number | null
-          requests: number | null
+          requests: number
+          disposable_requests: number
         }
         Insert: {
           id: string
           last_payment?: string | null
           plan_id?: number | null
-          requests?: number | null
+          requests: number
+          disposable_requests: number
         }
         Update: {
           id?: string
           last_payment?: string | null
           plan_id?: number | null
-          requests?: number | null
+          requests: number 
+          disposable_requests: number
         }
         Relationships: [
           {

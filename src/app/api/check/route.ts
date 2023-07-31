@@ -6,11 +6,7 @@ import type { NextRequest } from "next/server";
 import type { ApiError, Profile, Response } from "@/lib/api.types";
 import type { Database } from "@/lib/database.types";
 
-const formatUUID = (str: string) =>
-  `${str.slice(0, 8)}-${str.slice(8, 12)}-${str.slice(12, 16)}-${str.slice(
-    16,
-    20
-  )}-${str.slice(20)}`;
+const formatUUID = (str: string) =>  str.split("-").join("")
 
 const getUser = async (supabase: any, token: string): Promise<Profile> => {
   if (!token || !token.startsWith("Bearer ")) throw ERRORS.profile;
@@ -18,7 +14,7 @@ const getUser = async (supabase: any, token: string): Promise<Profile> => {
   try {
     const { data: user, error } = await supabase
       .from("profiles")
-      .select(`*,plan_id (max_requests)`)
+      .select("*,plan_id (max_requests)")
       .eq("id", id);
 
     // se cambia el mensaje de error para no mostrar el uuid
@@ -27,13 +23,12 @@ const getUser = async (supabase: any, token: string): Promise<Profile> => {
     if (!user || user.length === 0) throw ERRORS.profile;
     if (user[0].requests === user[0].plan_id.max_requests)
       throw ERRORS.requests;
-
     return {
       id: user[0].id,
       plan_id: user[0].plan_id,
       plans: null,
       requests: user[0].requests,
-      // max_requests: user[0].plan_id.max_requests,
+      disposable_requests: user[0].disposable_requests,
       last_payment: user[0].last_payment,
     };
   } catch (error) {
@@ -42,14 +37,17 @@ const getUser = async (supabase: any, token: string): Promise<Profile> => {
   }
 };
 
-const updateUserRequest = async (supabase: any, user: Profile): Promise<void> => {
-  const { id, requests } = user;
+const updateUserRequest = async (supabase: any, user: Profile, isValid: boolean): Promise<void> => {
+  let { requests, disposable_requests } = user;
+  requests += 1
+  disposable_requests += isValid ? 0 : 1
+
   try {
     if (requests !== null) {
       const { error } = await supabase
         .from("profiles")
-        .update({ requests: requests + 1 })
-        .eq("id", id);
+        .update({requests, disposable_requests})
+        .eq("id", user.id);
       if (error) throw error;
     }
   } catch (error) {
@@ -86,7 +84,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     if (!email) throw ERRORS.email
     const user = await getUser(supabase, token);
     const response = await checkEmail(supabase, email);
-    await updateUserRequest(supabase, user);
+    await updateUserRequest(supabase, user, response.valid);
     return NextResponse.json(response);
   } catch (error) {
     console.error(error);
