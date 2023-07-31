@@ -2,10 +2,12 @@ name: Pretty Code 🎀
 on:
   push:
     branches: 
-      -main
+      - main
+      - develop
   pull_request:
     branches:
       - main
+      - develop
     
 jobs:
   format:
