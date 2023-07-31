@@ -20,8 +20,4 @@ export interface Response {
     valid: boolean;
     code_message: string;
     message: string;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d10e69f82377a0c007ac2daaa183cf90844789a0
