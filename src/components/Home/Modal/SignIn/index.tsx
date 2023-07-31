@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 
+import { createClient } from "@/lib/supabase";
 import Image from "next/image";
-import { useSupabase } from "@/hooks/useSupabase";
 import { useRouter } from "next/navigation";
 import style from "./SignIn.module.css";
 
@@ -10,7 +10,7 @@ export default function SignIn() {
   const [password, setPassword] = useState("");
 
   const router = useRouter();
-  const supabase = useSupabase();
+  const supabase = createClient();
 
   const handleSignIn = async (e: FormEvent) => {
     e.preventDefault();
@@ -25,6 +25,24 @@ export default function SignIn() {
       alert(JSON.stringify(error));
     }
   };
+
+  const handleSignInWithGitHub = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "github",
+    });
+  };
+
+  const handleSignInWithGoogle = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+  }
+
+  const handleSignInWithTwitter = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "twitter",
+    });
+  }
 
   return (
     <form onSubmit={handleSignIn} method="POST">
@@ -50,7 +68,7 @@ export default function SignIn() {
           value={password}
         />
       </div>
-      <p className={style.recovery} onClick={() => alert("Tejo 🤷 ")}>
+      <p className={style.recovery} onClick={() => router.push("/reset-password")}>
         Recuperar contraseña
       </p>
 
@@ -58,7 +76,7 @@ export default function SignIn() {
         <input type="submit" className="btn btn-success" value="Ingresar" />
         <ul className={style.mediaAuth}>
           <li>
-            <button>
+            <button onClick={handleSignInWithGoogle}>
               <Image
                 src="/icons/google.svg"
                 alt="logo de Google"
@@ -69,7 +87,7 @@ export default function SignIn() {
             </button>
           </li>
           <li>
-            <button>
+            <button onClick={handleSignInWithGitHub}>
               <Image
                 src="/icons/github.svg"
                 alt="logo de GitHub"
@@ -80,13 +98,13 @@ export default function SignIn() {
             </button>
           </li>
           <li>
-            <button>
+            <button onClick={handleSignInWithTwitter}>
               <Image
-                src="/icons/linkedin.svg"
-                alt="logo de LinkedIn"
+                src="/icons/twitter-x.svg"
+                alt="logo de Twitter"
                 width={30}
                 height={30}
-                title="Inicia sesión con LinkedIn"
+                title="Inicia sesión con Twitter"
               />
             </button>
           </li>

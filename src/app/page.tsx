@@ -1,23 +1,17 @@
-"use client";
+import Home from "@/components/Home";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
-import Navbar from "@/components/Navbar";
-import Introduction from "@/components/Introduction";
-import Testimonial from "@/components/Testimonial";
-import Pricing from "@/components/Pricing";
+export default async function HomePage() {
+  const supabase = createServerComponentClient({ cookies });
 
-import useUser from "@/hooks/useUser";
-
-export default function Home() {
-  const user = useUser();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   return (
     <>
-      <Navbar user={user} />
-      <main>
-        <Introduction />
-        <Testimonial />
-        <Pricing />
-      </main>
+      <Home user={user} />
     </>
   );
 }
