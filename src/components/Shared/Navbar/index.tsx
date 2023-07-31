@@ -38,13 +38,19 @@ export default function Navbar({ user }: Props) {
         </div>
         <ul className={style.links}>
           <li>
-            <Link href={"/"} replace={true} prefetch={true}>Inicio</Link>
+            <Link href={"/"} replace={true} prefetch={true}>
+              Inicio
+            </Link>
           </li>
           <li>
-            <Link href={"/#testimonials"} replace={true} prefetch={true}>Testimonios</Link>
+            <Link href={"/#testimonials"} replace={true} prefetch={true}>
+              Testimonios
+            </Link>
           </li>
           <li>
-            <Link href={"/#pricing"} replace={true} prefetch={true}>Planes</Link>
+            <Link href={"/#pricing"} replace={true} prefetch={true}>
+              Planes
+            </Link>
           </li>
 
           {!user ? (

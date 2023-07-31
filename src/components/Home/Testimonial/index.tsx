@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import style from "./Testimonial.module.css";
@@ -19,7 +19,7 @@ export default function Testimonial() {
             />
             <div className={style.card}>
               <p className={style.ranking}>{`${"⭐".repeat(
-                client.ranking
+                client.ranking,
               )}`}</p>
               <p className={style.body}>{client.message}</p>
               <p className={style.name}>{client.name}</p>

@@ -30,7 +30,9 @@ export default function ResetPassword() {
       setEmail("");
     }
     if (error && error.status === 422) {
-      setError("El formato del correo electrónico no es correcto. Intenta de nuevo.");
+      setError(
+        "El formato del correo electrónico no es correcto. Intenta de nuevo.",
+      );
     }
     if (error && error.status === 429) {
       setError("Límite de solicitudes alcanzado. Intenta más tarde.");

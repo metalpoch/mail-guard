@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, FormEvent } from "react";
 import { createClient } from "@/lib/supabase/supabase-client";
@@ -37,13 +37,13 @@ export default function SignIn() {
     await supabase.auth.signInWithOAuth({
       provider: "google",
     });
-  }
+  };
 
   const handleSignInWithTwitter = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "twitter",
     });
-  }
+  };
 
   return (
     <form onSubmit={handleSignIn} method="POST">
@@ -69,7 +69,10 @@ export default function SignIn() {
           value={password}
         />
       </div>
-      <p className={style.recovery} onClick={() => router.push("/reset-password")}>
+      <p
+        className={style.recovery}
+        onClick={() => router.push("/reset-password")}
+      >
         Recuperar contraseña
       </p>
 

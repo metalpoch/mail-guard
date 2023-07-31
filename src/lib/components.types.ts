@@ -6,12 +6,12 @@ export interface Client {
 }
 
 export interface Plan {
-  name: string,
-  plan: string,
-  description: string,
-  price: number,
+  name: string;
+  plan: string;
+  description: string;
+  price: number;
   button: {
     value: string;
     action: () => void;
-  }
+  };
 }
