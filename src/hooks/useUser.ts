@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 import { User } from '@supabase/auth-helpers-nextjs'
 import { AuthChangeEvent, Session } from '@supabase/supabase-js'
-import { useSupabase } from './useSupabase'
+import { createClient } from '@/lib/supabase'
 
 function useAuth(): User | null {
     const [user, setUser] = useState<User | null>(null)
-    const supabase = useSupabase()
+    const supabase = createClient()
 
     const handleAuthStateChange = useCallback(async (event: AuthChangeEvent, session: Session | null) => {
         const currentUser = session?.user ?? null

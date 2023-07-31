@@ -1,29 +1,28 @@
-"use client";
-import Navbar from "@/components/Navbar";
-import { useRouter } from "next/navigation";
-import useUser from "@/hooks/useUser";
-import Profile from "@/components/dashboard/Profile";
-import Stats from "@/components/dashboard/Stats";
-import ApiKey from "@/components/dashboard/ApiKey";
-import Support from "@/components/dashboard/Support";
+import Dashboard from "@/components/Dashboard";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
-export default function Dashboard() {
-  const router = useRouter();
-  const user = useUser();
+export default async function DashboardPage() {
+  const supabase = createServerComponentClient({ cookies });
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/");
+  }
+
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("*, plans(*)")
+    .eq("id", user.id)
+    .single();
 
   return (
     <>
-      <Navbar user={user} />
-      {console.log(user)}
-      <main>
-        <h1 style={{ textAlign: "center" }}>Dashboard</h1>
-        <div className="dashboard-wrapper">
-          <Profile />
-          <ApiKey />
-          <Stats />
-          <Support />
-        </div>
-      </main>
+      <Dashboard user={user} profile={profile} />
     </>
   );
 }

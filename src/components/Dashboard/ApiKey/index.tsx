@@ -13,7 +13,7 @@ export default function ApiKey() {
     <div className={style.apiKey}>
       <p>API KEY: </p>
       <span>
-        <input type="password" value="Carajo!... Deja el chisme" />
+        <input type="password" readOnly value="Carajo!... Deja el chisme" />
         <button onClick={handleCopyClick} title="Copiar Key">
           <Image src="/icons/copy.svg" width={50} height={50} alt="Copy icon" />
         </button>

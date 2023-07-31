@@ -51,6 +51,7 @@ Estos script instalaran las dependencias del frontend y del backend en flask, us
 ## 🗝️ Variables De Entorno
 
 ```bash
+APP_URL=""
 NEXT_PUBLIC_SUPABASE_URL=""
 NEXT_PUBLIC_SUPABASE_ANON_KEY=""
 ```
