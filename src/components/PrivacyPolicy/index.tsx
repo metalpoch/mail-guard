@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import style from "@/components/Shared/Navbar/Navbar.module.css";
@@ -99,8 +99,8 @@ export default function PrivacyPolicy() {
           referring/exit pages, and possibly the number of clicks. These are not
           linked to any information that is personally identifiable. The purpose
           of the information is for analyzing trends, administering the site,
-          tracking users&apos; movement on the website, and gathering demographic
-          information.
+          tracking users&apos; movement on the website, and gathering
+          demographic information.
         </p>
 
         <h2>Advertising Partners Privacy Policies</h2>
@@ -114,8 +114,8 @@ export default function PrivacyPolicy() {
           Third-party ad servers or ad networks uses technologies like cookies,
           JavaScript, or Web Beacons that are used in their respective
           advertisements and links that appear on Mail Guard, which are sent
-          directly to users&apos; browser. They automatically receive your IP address
-          when this occurs. These technologies are used to measure the
+          directly to users&apos; browser. They automatically receive your IP
+          address when this occurs. These technologies are used to measure the
           effectiveness of their advertising campaigns and/or to personalize the
           advertising content that you see on websites that you visit.
         </p>
@@ -128,9 +128,9 @@ export default function PrivacyPolicy() {
         <h2>Third Party Privacy Policies</h2>
 
         <p>
-          Mail Guard&apos;s Privacy Policy does not apply to other advertisers or
-          websites. Thus, we are advising you to consult the respective Privacy
-          Policies of these third-party ad servers for more detailed
+          Mail Guard&apos;s Privacy Policy does not apply to other advertisers
+          or websites. Thus, we are advising you to consult the respective
+          Privacy Policies of these third-party ad servers for more detailed
           information. It may include their practices and instructions about how
           to opt-out of certain options.{" "}
         </p>
@@ -158,8 +158,8 @@ export default function PrivacyPolicy() {
           that a business has collected.
         </p>
         <p>
-          Request that a business that sells a consumer&apos;s personal data, not
-          sell the consumer&apos;s personal data.
+          Request that a business that sells a consumer&apos;s personal data,
+          not sell the consumer&apos;s personal data.
         </p>
         <p>
           If you make a request, we have one month to respond to you. If you
