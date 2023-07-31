@@ -5,7 +5,7 @@ import style from "./Navbar.module.css";
 import Modal from "@/components/Modal";
 
 import { useRouter } from "next/navigation";
-import { useSupabase } from "@/hooks/useSupabase";
+import { createClient } from "@/lib/supabase";
 
 interface Props {
   user: object | null;
@@ -14,14 +14,15 @@ interface Props {
 export default function Navbar({ user }: Props) {
   const [modal, setModal] = useState("");
   const router = useRouter();
-  const supabase = useSupabase();
 
   const handleOpen = (view: string) => setModal(view);
   const handleClose = () => setModal("");
+  const supabase = createClient();
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    router.replace("/");
+    // router.replace("/");
+    router.refresh();
   };
 
   return (
