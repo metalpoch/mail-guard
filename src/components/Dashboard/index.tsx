@@ -15,7 +15,7 @@ export default function Dashboard({
   user: User;
   profile: ProfileType | null;
 }) {
-  const apiKey = profile.id.replaceAll("-", "");
+  const apiKey = profile?.id.replaceAll("-", "");
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Dashboard({
         <h1 style={{ textAlign: "center" }}>Dashboard</h1>
         <div className="dashboard-wrapper">
           <Profile profile={profile} email={user.email} />
-          <ApiKey apiKey={apiKey} />
+          <ApiKey apiKey={apiKey || ""} />
           <Stats profile={profile} />
           <Support />
         </div>

@@ -1,6 +1,8 @@
+'use client';
+
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/supabase-client";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");

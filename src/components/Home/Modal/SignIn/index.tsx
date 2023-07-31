@@ -1,6 +1,7 @@
-import { useState, FormEvent } from "react";
+'use client';
 
-import { createClient } from "@/lib/supabase";
+import { useState, FormEvent } from "react";
+import { createClient } from "@/lib/supabase/supabase-client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import style from "./SignIn.module.css";

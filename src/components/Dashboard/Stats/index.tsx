@@ -29,9 +29,9 @@ const progressBars = (requests: number, disposable: number, limit: number) => [
 
 const percent = (value: number, limit: number) => (value * 100) / limit;
 
-export default function Stats({ profile }: { profile: Profile }) {
-  const requests = profile.requests || 0;
-  const max_requests = profile.plans?.max_requests || 20;
+export default function Stats({ profile }: { profile: Profile | null }) {
+  const requests = profile?.requests || 0;
+  const max_requests = profile?.plans?.max_requests || 20;
 
   const disposableMOCK = 0;
   const barsChart = progressBars(requests, disposableMOCK, max_requests);

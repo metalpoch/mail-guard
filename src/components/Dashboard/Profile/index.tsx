@@ -8,7 +8,7 @@ export default function Profile({
   profile,
   email,
 }: {
-  profile: ProfileType;
+  profile: ProfileType | null;
   email: string | undefined;
 }) {
   return (
@@ -23,7 +23,7 @@ export default function Profile({
         <h2>{email}</h2>
         <span>
           <p className={style.bold}>Plan:</p>
-          <p>{profile.plans?.name}</p>
+          <p>{profile?.plans?.name}</p>
         </span>
         <span>
           <p className={style.bold}>Balance:</p>
@@ -31,7 +31,7 @@ export default function Profile({
         </span>
         <span>
           <p className={style.bold}>Proximo Pago:</p>
-          <p>{profile.last_payment ? profile.last_payment : `-`}</p>
+          <p>{profile?.last_payment ? profile.last_payment : `-`}</p>
         </span>
       </div>
     </div>
