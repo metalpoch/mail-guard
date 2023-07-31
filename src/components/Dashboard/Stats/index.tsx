@@ -22,7 +22,7 @@ const progressBars = (requests: number, disposable: number, limit: number) => [
     name: "valid",
     body: "Email Validos",
     color: "--bg-color-primary",
-    value: requests - disposable,
+    value: +requests - disposable,
     limit: +requests,
   },
 ];
@@ -31,10 +31,10 @@ const percent = (value: number, limit: number) => (value * 100) / limit;
 
 export default function Stats({ profile }: { profile: Profile | null }) {
   const requests = profile?.requests || 0;
+  const disposable_requests = profile?.disposable_requests || 0;
   const max_requests = profile?.plans?.max_requests || 20;
 
-  const disposableMOCK = 0;
-  const barsChart = progressBars(requests, disposableMOCK, max_requests);
+  const barsChart = progressBars(requests, disposable_requests, max_requests);
   return (
     <div className={style.stats}>
       {barsChart.map((chart) => (
