@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { User } from '@supabase/auth-helpers-nextjs'
 import { AuthChangeEvent, Session } from '@supabase/supabase-js'
-import { createClient } from '@/lib/supabase'
+import { createClient } from '@/lib/supabase/supabase-client'
 
 function useAuth(): User | null {
     const [user, setUser] = useState<User | null>(null)

@@ -12,8 +12,8 @@ export default function Dashboard({
   user,
   profile,
 }: {
-  user: User;
-  profile: ProfileType;
+  user: User,
+  profile: ProfileType | null
 }) {
   console.log(profile)
   return (

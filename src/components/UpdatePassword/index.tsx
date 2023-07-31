@@ -1,6 +1,6 @@
 "use client";
 
-import { createClient } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/supabase-client";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

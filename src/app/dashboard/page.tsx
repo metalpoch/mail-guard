@@ -1,10 +1,9 @@
 import Dashboard from "@/components/Dashboard";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createServerSupabaseClient } from "@/lib/supabase/supabase-server";
 import { redirect } from "next/navigation";
-import { cookies } from "next/headers";
 
 export default async function DashboardPage() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerSupabaseClient();
 
   const {
     data: { user },
