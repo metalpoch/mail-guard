@@ -22,7 +22,7 @@ jobs:
           
       - name: Format with prettier
         run: |
-          prettier --write "**/{*.jsx,*.js,*.css}"
+          prettier --write "**/{*.jsx,*.js,*.tsx,*.ts,*.css}"
           
       - name: Check for changes
         id: changes
