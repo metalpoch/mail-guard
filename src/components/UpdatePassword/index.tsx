@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import navbarStyles from "../Navbar.module.css";
+import navbarStyles from "@/components/Shared/Navbar/Navbar.module.css";
 import styles from "./UpdatePassword.module.css";
 
 export default function UpdatePassword() {

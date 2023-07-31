@@ -1,4 +1,4 @@
-import UpdatePassword from "@/components/UpdatePassword/UpdatePassword";
+import UpdatePassword from "@/components/UpdatePassword";
 
 export default function UpdatePasswordPage() {
   return (

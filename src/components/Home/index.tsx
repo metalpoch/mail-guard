@@ -1,9 +1,9 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Introduction from "@/components/Introduction";
-import Testimonial from "@/components/Testimonial";
-import Pricing from "@/components/Pricing";
+import Navbar from "@/components/Shared/Navbar";
+import Introduction from "@/components/Home/Introduction";
+import Testimonial from "@/components/Home/Testimonial";
+import Pricing from "@/components/Home/Pricing";
 import { User } from "@supabase/supabase-js";
 
 export default function Home({ user }: { user: User | null }) {

@@ -1,10 +1,10 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Profile from "@/components/dashboard/Profile";
-import Stats from "@/components/dashboard/Stats";
-import ApiKey from "@/components/dashboard/ApiKey";
-import Support from "@/components/dashboard/Support";
+import Navbar from "@/components/Shared/Navbar";
+import Profile from "@/components/Dashboard/Profile";
+import Stats from "@/components/Dashboard/Stats";
+import ApiKey from "@/components/Dashboard/ApiKey";
+import Support from "@/components/Dashboard/Support";
 import { User } from "@supabase/supabase-js";
 import { Profile as ProfileType } from "@/lib/api.types";
 

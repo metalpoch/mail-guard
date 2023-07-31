@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import style from "./Navbar.module.css";
-import Modal from "@/components/Modal";
+import Modal from "@/components/Home/Modal";
 
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase";

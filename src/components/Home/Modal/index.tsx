@@ -1,8 +1,8 @@
 // import { ReactNode } from "react";
 import Image from "next/image";
 import style from "./Modal.module.css";
-import SignUp from "@/components/SignUp";
-import SignIn from "@/components/SignIn";
+import SignUp from "@/components/Home/Modal/SignUp";
+import SignIn from "@/components/Home/Modal/SignIn";
 
 interface PropsModal {
   modal: string;
