@@ -13,22 +13,33 @@ export default function Dashboard({
   profile,
 }: {
   user: User;
-  profile: ProfileType;
+  profile: ProfileType | null;
 }) {
-  console.log(profile)
+  const apiKey = profile.id.replaceAll("-", "");
+
   return (
     <>
       <Navbar user={user} />
-      {console.log(user)}
       <main>
         <h1 style={{ textAlign: "center" }}>Dashboard</h1>
         <div className="dashboard-wrapper">
-          <Profile />
-          <ApiKey />
-          <Stats />
+          <Profile profile={profile} email={user.email} />
+          <ApiKey apiKey={apiKey} />
+          <Stats profile={profile} />
           <Support />
         </div>
       </main>
     </>
   );
 }
+// {
+//   "id": "823dfdf8-6dc6-44b1-8a74-3d9fc118a085",
+//   "requests": null,
+//   "plan_id": 1,
+//   "last_payment": null,
+//   "plans": {
+//     "id": 1,
+//     "name": "FREE",
+//     "max_requests": 20
+//   }
+// }

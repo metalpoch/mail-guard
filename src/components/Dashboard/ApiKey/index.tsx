@@ -1,12 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import style from "./ApiKey.module.css";
 
-const keyMock = "11111111222233334444555555555555";
-
-export default function ApiKey() {
+export default function ApiKey({ apiKey }: { apiKey: string }) {
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(keyMock);
-    alert("texto copiado");
+    navigator.clipboard.writeText(apiKey);
+    alert("Api Key copiado");
   };
 
   return (
