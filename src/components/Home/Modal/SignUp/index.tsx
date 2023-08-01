@@ -1,27 +1,49 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/supabase-client";
 
-export default function SignUp() {
+export default function SignUp({ handle }: { handle: () => void }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setpasswordConfirmation] = useState("");
 
-  const router = useRouter();
   const supabase = createClient();
+
+  const API_KEY =
+    process.env.SUPER_USER_TOKEN || "994de7713f3f425daefba5ace7fabd0d";
 
   const handleSignUp = async (e: FormEvent) => {
     e.preventDefault();
-    await supabase.auth.signUp({
+
+    const response = await fetch(
+      `${location.origin}/api/check?email=${email}`,
+      {
+        headers: {
+          Authentication: `Bearer ${API_KEY}`,
+        },
+      }
+    );
+    const { valid } = await response.json();
+    if (!valid) {
+      alert("El email no es valido");
+      handle();
+      return;
+    }
+
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         emailRedirectTo: `${location.origin}/auth/callback`,
       },
     });
-    router.refresh();
+    if (error) {
+      alert(JSON.stringify(error.message));
+    } else {
+      alert("Se ha enviado un correo de confirmación a su email");
+    }
+    handle();
   };
 
   return (
@@ -34,6 +56,7 @@ export default function SignUp() {
           placeholder="palito@mantequillero.com"
           onChange={(e) => setEmail(e.target.value)}
           name="email"
+          required
           value={email}
         />
       </div>
@@ -45,6 +68,7 @@ export default function SignUp() {
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           name="password"
+          required
           value={password}
         />
       </div>
@@ -58,6 +82,7 @@ export default function SignUp() {
           type="password"
           onChange={(e) => setpasswordConfirmation(e.target.value)}
           name="passwordConfirmation"
+          required
           value={passwordConfirmation}
         />
       </div>
