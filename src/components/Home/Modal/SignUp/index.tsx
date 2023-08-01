@@ -10,7 +10,7 @@ export default function SignUp({ handle }: { handle: () => void }) {
 
   const supabase = createClient();
 
-  const API_KEY = process.env.NEXT_PUBLIC_SUPER_USER_TOKEN ;
+  const API_KEY = process.env.NEXT_PUBLIC_SUPER_USER_TOKEN;
 
   const handleSignUp = async (e: FormEvent) => {
     e.preventDefault();
