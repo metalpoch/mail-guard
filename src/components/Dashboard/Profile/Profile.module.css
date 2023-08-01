@@ -20,7 +20,45 @@
 .bold {
   font-weight: bold;
 }
+
 .info p {
   width: 100%;
   font-size: calc(18px + 0.390625vw);
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  color: var(--bg-color-success);
+  font-weight: bold;
+}
+
+.binanceButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-color-primary);
+  color: var(--color-white);
+  width: 50%;
+  font-size: 1.5em;
+  border-radius: 12px;
+  padding: 0 0.3em;
+  box-shadow: -2px 3px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.1s, transform 0.1s;
+}
+
+.binanceButton svg {
+  color: #f3ba2f;
+}
+.binanceButton:hover {
+  transform: translate(-2px, 3px);
+  box-shadow: -1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.binanceButton:active {
+  transform: translate(-3px, 4px);
+  box-shadow: 0px 0px rgba(0, 0, 0, 0.25);
 }
