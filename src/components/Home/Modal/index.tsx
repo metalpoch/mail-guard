@@ -36,7 +36,7 @@ function Card({ modal, handle }: PropsModal) {
             {modal === "signup" && (
               <>
                 <h2>Unete a la guardia</h2>
-                <SignUp />
+                <SignUp handle={handle} />
               </>
             )}
           </div>
