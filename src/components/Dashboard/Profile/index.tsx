@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import style from "./Profile.module.css";
+import BinanceButton from "./BinanceButton";
 import { Profile as ProfileType } from "@/lib/api.types";
 
 export default function Profile({
@@ -27,7 +28,10 @@ export default function Profile({
         </span>
         <span>
           <p className={style.bold}>Balance:</p>
-          <p>{"<Binance/>"}</p>
+          <span className={style.balance}>
+            <p>{`\$${profile?.balance}`}</p>
+            <BinanceButton />
+          </span>
         </span>
         <span>
           <p className={style.bold}>Proximo Pago:</p>

@@ -27,6 +27,7 @@ const getUser = async (supabase: any, token: string): Promise<Profile> => {
       id: user[0].id,
       plan_id: user[0].plan_id,
       plans: null,
+      balance: user[0].balance,
       requests: user[0].requests,
       disposable_requests: user[0].disposable_requests,
       last_payment: user[0].last_payment,

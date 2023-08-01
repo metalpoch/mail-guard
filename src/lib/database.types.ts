@@ -47,6 +47,7 @@ export interface Database {
           id: string;
           last_payment: string | null;
           plan_id: number | null;
+          balance: number;
           requests: number;
           disposable_requests: number;
         };
@@ -54,6 +55,7 @@ export interface Database {
           id: string;
           last_payment?: string | null;
           plan_id?: number | null;
+          balance: number;
           requests: number;
           disposable_requests: number;
         };
@@ -61,6 +63,7 @@ export interface Database {
           id?: string;
           last_payment?: string | null;
           plan_id?: number | null;
+          balance: number;
           requests: number;
           disposable_requests: number;
         };

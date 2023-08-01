@@ -12,6 +12,7 @@ export interface Profile {
   id: string;
   last_payment: string | null;
   plan_id: number | null;
+  balance: number;
   requests: number;
   disposable_requests: number;
   plans: { id: number; max_requests: number | null; name: string } | null;
