@@ -28,7 +28,7 @@ export default function SignUp({
         headers: {
           Authentication: `Bearer ${API_KEY}`,
         },
-      }
+      },
     );
     const { valid } = await response.json();
     if (!valid) {

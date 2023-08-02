@@ -2,7 +2,10 @@ import style from "./Profile.module.css";
 
 export default function BinanceButton() {
   return (
-    <a onClick={() => alert("redireccionando a pagame-mis-billuyos/")} className={style.binanceButton}>
+    <a
+      onClick={() => alert("redireccionando a pagame-mis-billuyos/")}
+      className={style.binanceButton}
+    >
       +
       <svg
         xmlns="http://www.w3.org/2000/svg"
