@@ -31,7 +31,7 @@ function Card({ modal, handle }: PropsModal) {
           <div className={style.body}>
             <div className={style.head}>
               {loading ? (
-		<div className={style.loading}>
+                <div className={style.loading}>
                   <div></div>
                   <div></div>
                 </div>
@@ -45,9 +45,7 @@ function Card({ modal, handle }: PropsModal) {
               )}
             </div>
 
-            {modal === "signin" && (
-                <SignIn setLoading={setLoading}/>
-            )}
+            {modal === "signin" && <SignIn setLoading={setLoading} />}
             {modal === "signup" && (
               <>
                 <h2>Unete a la guardia</h2>
