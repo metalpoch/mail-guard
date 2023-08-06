@@ -54,6 +54,10 @@ Estos script instalaran las dependencias del frontend y del backend en flask, us
 APP_URL=""
 NEXT_PUBLIC_SUPABASE_URL=""
 NEXT_PUBLIC_SUPABASE_ANON_KEY=""
+
+TRELLO_API_KEY=
+TRELLO_TOKEN=
+TRELLO_BOARD_LIST_ID=
 ```
 
 ## ⚡Ejecución local
