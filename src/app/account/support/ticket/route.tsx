@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
         {
           method: "POST",
           headers: { Accept: "application/json" },
-        }
+        },
       );
     }
   }
