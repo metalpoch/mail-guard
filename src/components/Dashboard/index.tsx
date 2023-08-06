@@ -19,7 +19,7 @@ export default function Dashboard({
 
   return (
     <>
-      <Navbar user={user} />
+      <Navbar user={user} profile={profile} />
       <main>
         <h1 style={{ textAlign: "center" }}>Dashboard</h1>
         <div className="dashboard-wrapper">
