@@ -36,7 +36,6 @@ section {
   justify-content: center;
   height: 100vh;
   gap: 2rem;
-  padding: 1em 10em;
 }
 
 h1,
@@ -80,6 +79,7 @@ input {
   width: 50vw;
   flex-direction: column;
   gap: 2em;
+  align-self: center;
 }
 
 .dashboard-wrapper {
@@ -88,4 +88,20 @@ input {
   flex-wrap: wrap;
   gap: 3em;
   padding: 1em 2em;
+}
+
+@media screen and (max-width: 910px) {
+  body {
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: calc(28px - 0.390625vw);
+  }
+
+  h2 {
+    font-size: calc(24px - 0.390625vw);
+  }
+  p {
+    font-size: calc(16px - 0.390625vw);
+  }
 }
