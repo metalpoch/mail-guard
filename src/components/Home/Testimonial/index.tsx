@@ -13,7 +13,7 @@ export default function Testimonial() {
   useEffect(() => {
     const interval = setInterval(
       () => setAnimation("animate__fadeInDown"),
-      5000
+      5000,
     );
     return () => clearInterval(interval);
   }, [testimonialID]);
@@ -22,7 +22,7 @@ export default function Testimonial() {
     if (animation === "animate__fadeInDown") {
       const interval = setInterval(
         () => setAnimation("animate__fadeOutDown animate__fast"),
-        4200
+        4200,
       );
       return () => clearInterval(interval);
     }
@@ -49,7 +49,7 @@ export default function Testimonial() {
           />
           <div className={style.card}>
             <p className={style.ranking}>{`${"⭐".repeat(
-              clients[testimonialID].ranking
+              clients[testimonialID].ranking,
             )}`}</p>
             <p className={style.body}>{clients[testimonialID].message}</p>
             <p className={style.name}>{clients[testimonialID].name}</p>
