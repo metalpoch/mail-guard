@@ -6,12 +6,14 @@ import Modal from "@/components/Home/Modal";
 
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/supabase-client";
+import { Profile } from "@/lib/api.types";
 
 interface Props {
   user: object | null;
+  profile: Profile | null;
 }
 
-export default function Navbar({ user }: Props) {
+export default function Navbar({ user, profile }: Props) {
   const [open, setOpen] = useState(false);
   const [modal, setModal] = useState("");
   const router = useRouter();
@@ -59,6 +61,12 @@ export default function Navbar({ user }: Props) {
               Planes
             </Link>
           </li>
+
+          {user && profile?.plan_id !== 1 && (
+            <li>
+              <Link href={"/support"}>Soporte</Link>
+            </li>
+          )}
 
           {!user ? (
             <>

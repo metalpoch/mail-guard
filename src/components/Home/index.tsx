@@ -5,11 +5,18 @@ import Introduction from "@/components/Home/Introduction";
 import Testimonial from "@/components/Home/Testimonial";
 import Pricing from "@/components/Home/Pricing";
 import { User } from "@supabase/supabase-js";
+import { Profile } from "@/lib/api.types";
 
-export default function Home({ user }: { user: User | null }) {
+export default function Home({
+  user,
+  profile,
+}: {
+  user: User | null;
+  profile: Profile | null;
+}) {
   return (
     <>
-      <Navbar user={user} />
+      <Navbar user={user} profile={profile} />
       <main>
         <Introduction />
         <Testimonial />
