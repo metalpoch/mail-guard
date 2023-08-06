@@ -1,18 +1,29 @@
 .introduction {
   background-color: var(--bg-color-secondary);
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 5em);
+  display: flex;
+  flex-direction: row;
 }
 
 .introduction img {
-  position: absolute;
-  right: 8em;
-  top: 8em;
+  object-fit: contain;
+  align-self: flex-start;
   width: 20%;
+  transition: opacity 0.4s linear;
 }
 
 .introduction h1 {
   color: var(--color-white);
 }
+
 .introduction p {
   color: var(--text-color-light);
+}
+
+@media screen and (max-width: 910px) {
+  .introduction img {
+    position: absolute;
+    opacity: 0.2;
+    right: 15%;
+  }
 }

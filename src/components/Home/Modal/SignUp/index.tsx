@@ -3,16 +3,23 @@
 import { useState, FormEvent } from "react";
 import { createClient } from "@/lib/supabase/supabase-client";
 
-export default function SignUp({ handle }: { handle: () => void }) {
+export default function SignUp({
+  handle,
+  setLoading,
+}: {
+  handle: () => void;
+  setLoading: (state: boolean) => void;
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setpasswordConfirmation] = useState("");
 
   const supabase = createClient();
 
-  const API_KEY = process.env.NEXT_PUBLIC_SUPER_USER_TOKEN ;
+  const API_KEY = process.env.NEXT_PUBLIC_SUPER_USER_TOKEN;
 
   const handleSignUp = async (e: FormEvent) => {
+    setLoading(true);
     e.preventDefault();
 
     const response = await fetch(
@@ -30,13 +37,14 @@ export default function SignUp({ handle }: { handle: () => void }) {
       return;
     }
 
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         emailRedirectTo: `${location.origin}/auth/callback`,
       },
     });
+    setLoading(false);
     if (error) {
       alert(JSON.stringify(error.message));
     } else {

@@ -1,8 +1,7 @@
 .navbar {
   display: flex;
-  /*position: fixed;*/
   width: 100vw;
-  height: 8rem;
+  height: 5rem;
   background-color: var(--bg-color-primary);
   justify-content: space-between;
   align-items: center;
@@ -15,11 +14,11 @@
 }
 
 .logo img {
-  width: 5rem;
+  width: 3rem;
 }
 
 .logo h1 {
-  font-size: 28pt;
+  font-size: 1.2em;
   color: var(--color-white);
   margin-left: 10px;
   font-weight: bold;
@@ -31,5 +30,36 @@
   gap: 1.5rem;
   color: var(--color-white);
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 0.8em;
+}
+
+.btn {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .logo h1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .links {
+    display: none;
+  }
+  .btn {
+    display: block;
+    color: white;
+  }
+  .show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 6.1em;
+    left: 0;
+    width: 100vw;
+    padding: 1em 2em;
+    gap: 0.5em;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
