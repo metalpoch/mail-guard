@@ -5,26 +5,28 @@
 .wrapper,
 .pricing {
   display: flex;
-  gap: 1em;
   align-items: center;
   justify-content: space-between;
+  padding: 0 5em;
 }
 
 .pricing {
   gap: 1em;
+  padding: 0 1em;
 }
 
 .card {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
   padding: 2em;
-  border: 5px solid var(--bg-color-primary);
+  border: 3px solid var(--bg-color-primary);
   border-radius: 12px;
   width: calc(100% / 3);
-  height: 70vh;
+  height: 415px;
 }
 
 .plan {
@@ -38,6 +40,28 @@
   gap: 2em;
 }
 
+.description p {
+  font-size: 0.9em;
+  text-align: left;
+}
+
 .img {
   object-fit: contain;
+  width: 12em;
+}
+
+@media screen and (max-width: 1260px) {
+  .img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .pricing {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    height: 10%;
+  }
 }

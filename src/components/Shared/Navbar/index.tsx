@@ -12,9 +12,11 @@ interface Props {
 }
 
 export default function Navbar({ user }: Props) {
+  const [open, setOpen] = useState(false);
   const [modal, setModal] = useState("");
   const router = useRouter();
 
+  const handleNavbar = () => setOpen(!open);
   const handleOpen = (view: string) => setModal(view);
   const handleClose = () => setModal("");
   const supabase = createClient();
@@ -36,7 +38,12 @@ export default function Navbar({ user }: Props) {
           />
           <h1>Mail Guard</h1>
         </div>
-        <ul className={style.links}>
+        <ul
+          className={`${style.links} ${
+            open &&
+            style.show + " animate__animated animate__faste animate__fadeInLeft"
+          }`}
+        >
           <li>
             <Link href={"/"} replace={true} prefetch={true}>
               Inicio
@@ -82,6 +89,50 @@ export default function Navbar({ user }: Props) {
             </div>
           )}
         </ul>
+        <button className={style.btn} onClick={handleNavbar}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="34"
+            height="34"
+            viewBox="0 0 24 24"
+          >
+            <g
+              fill="none"
+              stroke="white"
+              stroke-dasharray="24"
+              stroke-dashoffset="24"
+              stroke-linecap="round"
+              stroke-width="2"
+            >
+              <path d="M5 5H19">
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  dur="0.2s"
+                  values="24;0"
+                />
+              </path>
+              <path d="M5 12H19">
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  begin="0.2s"
+                  dur="0.2s"
+                  values="24;0"
+                />
+              </path>
+              <path d="M5 19H19">
+                <animate
+                  fill="freeze"
+                  attributeName="stroke-dashoffset"
+                  begin="0.4s"
+                  dur="0.2s"
+                  values="24;0"
+                />
+              </path>
+            </g>
+          </svg>
+        </button>
       </header>
       {modal && <Modal modal={modal} handle={handleClose} />}
     </>
