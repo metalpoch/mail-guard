@@ -5,7 +5,7 @@ Esta API te permite verificar si un email es válido, inválido o desechable, us
 ## Cómo usar la API
 
 - Para usar la API, debes tener una cuenta en [Mail Guard](https://mail-guard.vercel.app/).
-- Una vez que tengas tu cuenta, debes iniciar sesión con tu email y contraseña, y obtener un token de autenticación que te identifique como usuario, Este token lo obtendras haciendo click en el icono de copiar. %Insertar imagen de ejemplo SUPERMAMALONA%
+- Una vez que tengas tu cuenta, debes iniciar sesión con tu email y contraseña, y obtener un token de autenticación que te identifique como usuario, Este token lo obtendras haciendo click en el icono azul. <img src="https://raw.githubusercontent.com/metalpoch/mail-guard/528b34c1652c70cdba18b5cd877675036663aa18/public/assets/apiKey.jpeg">
 - Luego, debes enviar una petición GET a la ruta `/api/check`, con el parámetro `email` que contenga el email que quieres validar, y el encabezado `authentication` que contenga el valor `Bearer <token>`, donde `<token>` es el token que obtuviste al iniciar sesión.
 - La API te devolverá un objeto JSON con tres propiedades: `valid`, `code_message` y `message`.
 - Si no envías el parámetro `email` o el encabezado `authentication`, o si envías un token inválido o caducado, la API te devolverá un objeto JSON con una propiedad llamada `error`, que tendrá un mensaje de error que explicará la causa del problema.
