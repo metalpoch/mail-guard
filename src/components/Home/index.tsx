@@ -20,7 +20,7 @@ export default function Home({
       <main>
         <Introduction />
         <Testimonial />
-        <Pricing />
+        <Pricing user={user} />
       </main>
     </>
   );
