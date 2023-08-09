@@ -62,8 +62,8 @@ export default function Navbar({ user, profile }: Props) {
             </Link>
           </li>
           <li>
-	    <Link
-	      target="_blank"
+            <Link
+              target="_blank"
               href={
                 "https://github.com/metalpoch/mail-guard/blob/main/src/docs/API.md"
               }
