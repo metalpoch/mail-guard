@@ -61,7 +61,16 @@ export default function Navbar({ user, profile }: Props) {
               Planes
             </Link>
           </li>
-
+          <li>
+	    <Link
+	      target="_blank"
+              href={
+                "https://github.com/metalpoch/mail-guard/blob/main/src/docs/API.md"
+              }
+            >
+              Documentación
+            </Link>
+          </li>
           {user && profile?.plan_id !== 1 && (
             <li>
               <Link href={"/support"}>Soporte</Link>
