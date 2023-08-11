@@ -7,6 +7,7 @@ import ApiKey from "@/components/Dashboard/ApiKey";
 import Support from "@/components/Dashboard/Support";
 import { User } from "@supabase/supabase-js";
 import { Profile as ProfileType } from "@/lib/api.types";
+import Footer from "../Shared/Footer";
 
 export default function Dashboard({
   user,
@@ -20,7 +21,7 @@ export default function Dashboard({
   return (
     <>
       <Navbar user={user} profile={profile} />
-      <main>
+      <main className="mb-32">
         <h1 style={{ textAlign: "center" }}>Dashboard</h1>
         <div className="dashboard-wrapper">
           <Profile profile={profile} email={user.email} />
@@ -29,6 +30,7 @@ export default function Dashboard({
           <Support />
         </div>
       </main>
+      <Footer />
     </>
   );
 }
