@@ -3,6 +3,7 @@
 import Image from "next/image";
 import style from "@/components/Shared/Navbar/Navbar.module.css";
 import Link from "next/link";
+import Footer from "../Shared/Footer";
 
 export default function PrivacyPolicy() {
   return (
@@ -20,7 +21,7 @@ export default function PrivacyPolicy() {
           </Link>
         </div>
       </header>
-      <div className="p-5 lg:px-28">
+      <div className="p-5 lg:px-28 mb-32">
         <h1 className="my-10">Privacy policy</h1>
 
         <p>
@@ -246,6 +247,7 @@ export default function PrivacyPolicy() {
           not hesitate to contact us.
         </p>
       </div>
+      <Footer />
     </div>
   );
 }

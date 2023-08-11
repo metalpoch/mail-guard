@@ -13,6 +13,7 @@
 .pricing {
   gap: 1em;
   padding: 0 1em;
+  margin-bottom: 100px;
 }
 
 .card {

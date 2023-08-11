@@ -12,6 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Navbar from "../Shared/Navbar";
 import styles from "./Support.module.css";
 import TicketList from "./TicketList";
+import Footer from "../Shared/Footer";
 
 registerLocale("es", es);
 
@@ -116,6 +117,7 @@ export default function Support({
         </div>
         <TicketList tickets={tickets} />
       </main>
+      <Footer />
     </>
   );
 }
