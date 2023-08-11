@@ -76,7 +76,8 @@ input {
 .description {
   display: flex;
   flex-wrap: wrap;
-  width: 50vw;
+  width: 600px;
+  max-width: 80vw;
   flex-direction: column;
   gap: 2em;
   align-self: center;
@@ -91,9 +92,6 @@ input {
 }
 
 @media screen and (max-width: 910px) {
-  body {
-    overflow-x: hidden;
-  }
   h1 {
     font-size: calc(28px - 0.390625vw);
   }
