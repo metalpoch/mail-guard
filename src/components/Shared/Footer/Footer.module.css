@@ -3,7 +3,7 @@
     background-color: #ECEEF0;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     row-gap: 50px;
     padding: 20px;
