@@ -3,8 +3,10 @@
 import Image from "next/image";
 import style from "@/components/Shared/Navbar/Navbar.module.css";
 import Link from "next/link";
+import Footer from "../Shared/Footer";
 
 export default function TermsOfService() {
+  // TODO: Add 'real' content to this page
   return (
     <div>
       <header className={style.navbar}>
@@ -20,7 +22,7 @@ export default function TermsOfService() {
           </Link>
         </div>
       </header>
-      <div className="p-5 lg:px-28">
+      <div className="p-5 lg:px-28 mb-32">
         <h1 className="my-10">Terminos y condiciones</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
@@ -47,6 +49,7 @@ export default function TermsOfService() {
           alias deleniti.
         </p>
       </div>
+      <Footer />
     </div>
   );
 }
