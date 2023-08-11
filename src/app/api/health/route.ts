@@ -12,7 +12,7 @@ export async function GET() {
       return NextResponse.json("rate limit exceeded");
     }
     const uptime = await response.json();
-    if (uptime.monitors.length > 0) {
+    if (uptime.monitors && Array.isArray(uptime.monitors) && uptime.monitors.length > 0) {
       return NextResponse.json(uptime.monitors[0]);
     }
     return NextResponse.json(
