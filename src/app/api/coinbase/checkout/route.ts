@@ -49,8 +49,8 @@ export async function POST(request: NextRequest) {
   try {
     // create new coinbase charge
     const charge = await resources.Charge.create({
-      name: "Add founds",
-      description: "Add founds to your Mail Guard account",
+      name: "Add funds",
+      description: "Add funds to your Mail Guard account",
       local_price: {
         amount,
         currency: "USD",
