@@ -12,7 +12,7 @@ export default function Support() {
           tienes que hacer clic en el siguiente enlace y te atenderemos
           enseguida. Estamos a tu disposición.
         </p>
-        <a>https://xvideos.com/mail-guard/support</a>
+        <a href="https://mail-guard.vercel.app/support">mail-guard.vercel.app/support</a>
       </div>
       <Image
         src="/assets/support.webp"

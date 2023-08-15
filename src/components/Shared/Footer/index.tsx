@@ -58,10 +58,10 @@ export default function Footer() {
                 Status
               </a>
               <div
-                title={UPTIME_STATUS_CODES[uptimeStatus].message}
+                title={UPTIME_STATUS_CODES[uptimeStatus]?.message}
                 className={styles.statusDot}
                 style={{
-                  backgroundColor: UPTIME_STATUS_CODES[uptimeStatus].color,
+                  backgroundColor: UPTIME_STATUS_CODES[uptimeStatus]?.color,
                 }}
               ></div>
             </div>
