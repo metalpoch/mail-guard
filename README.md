@@ -28,7 +28,8 @@ Nuestros planes van desde las 20 peticiones ¡hasta 10K por mes! ¿no es increí
 - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" width=30 /> [TypeScript]: es un lenguaje de programación que extiende JavaScript
 - <img src="https://www.svgrepo.com/show/354113/nextjs-icon.svg" width=30 /> [Next.js]: es un framework de React para construir aplicaciones web modernas y escalables
 - <img src="https://cf.appdrag.com/dashboard-openvm-clo-b2d42c/uploads/supabase-TAiY.png" width=30 /> [Supabase]: Plataforma de backend-as-a-service (BaaS) para construir aplicaciones
-
+- <img src="https://icons-for-free.com/download-icon-coinbase+round-1330289834158799346_256.ico" width=30 /> [Coinbase]: Es una plataforma de comercio de criptomonedas
+- 🟢  [UptimeRobot]: Monitoreo de servicios
 ## 💾 Instalación y uso de manera local
 
 ### Clona este repositorio [GitHub]
@@ -39,14 +40,12 @@ git clone https://github.com/metalpoch/mail-guard.git
 
 ### Instale las dependencias
 
-¡La instalación de las dependencias es mas fácil que nunca! Solo ejecute uno de los siguientes script basado en su sistema operativo.
+¡La instalación de las dependencias es mas fácil que nunca!
 
 ```bash
 cd mail-guard
 npm install
 ```
-
-Estos script instalaran las dependencias del frontend y del backend en flask, usando los entornos virtuales e instalando las dependencias en dichos entornos.
 
 ## 🗝️ Variables De Entorno
 
@@ -92,3 +91,5 @@ npm run dev # ¡Listo!
 [next.js]: https://nextjs.org/
 [supabase]: https://supabase.com/
 [typescript]: https://www.typescriptlang.org/
+[UptimeRobot]: https://stats.uptimerobot.com/gqN73IPq3l
+[Coinbase]: https://www.coinbase.com/es
