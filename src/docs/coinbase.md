@@ -6,6 +6,22 @@ Para agregar fondos en la cuenta del usuario, está la opción de utilizar Coinb
 
 Desde la pagina `/add-funds` se selecciona el método de Coinbase, y se selecciona un monto a pagar. Después cuando se hace clic en "Confirmar y pagar" se llamará a la ruta de `/api/coinbase/checkout` donde con el `user_id` del usuario loggeado, se creará un `charge` o intento de pago.
 
+
+```javascript
+const charge = await resources.Charge.create({
+    name: "Add funds",
+    description: "Add funds to your Mail Guard account",
+    local_price: {
+        amount,
+        currency: "USD",
+    },
+    pricing_type: "fixed_price",
+    metadata: {
+        user_id,
+    },
+});
+```
+
 ![Screenshot_20230815_225246](https://github.com/Jesusml1/mail-guard/assets/40727563/702f823b-a688-4be0-b915-71868c601eb5)
 
 Aqui un ejemplo del `charge` que nos devuelve la API de Coinbase:
