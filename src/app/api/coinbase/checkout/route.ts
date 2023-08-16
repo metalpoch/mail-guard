@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
           "Tienes una transacción abierta, ve al siguente url para procesar tu pago",
         hosted_url: payment.hosted_url,
       },
-      { status: 409 }
+      { status: 409 },
     );
   }
 
