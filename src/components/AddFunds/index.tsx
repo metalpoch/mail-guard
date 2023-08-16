@@ -37,7 +37,7 @@ export default function AddFunds({
   const [loading, setLoading] = useState(false);
   const [amount, setAmount] = useState<number>(10);
   const [paymentType, setPaymentType] = useState<PaymentTypes>(
-    PaymentTypes.COINBASE
+    PaymentTypes.COINBASE,
   );
   const [showMessage, setShowMessage] = useState(false);
   const [hostedUrl, setHostedUrl] = useState("#");
@@ -59,7 +59,7 @@ export default function AddFunds({
   async function handleCreateCharge() {
     setLoading(true);
     setShowError(false);
-    setShowCreatedCharge(false)
+    setShowCreatedCharge(false);
     try {
       const response = await fetch("/api/coinbase/checkout", {
         method: "post",
@@ -71,8 +71,8 @@ export default function AddFunds({
         setShowMessage(true);
         window.open(data.charge.hosted_url, "_blank", "noopener,noreferrer");
       } else if (response.status === 409) {
-        setHostedUrl(data.hosted_url)
-        setShowCreatedCharge(true)
+        setHostedUrl(data.hosted_url);
+        setShowCreatedCharge(true);
       } else {
         setShowError(true);
       }
@@ -220,8 +220,7 @@ export default function AddFunds({
                     className="underline"
                   >
                     aqui
-                  </a>
-                  {" "}
+                  </a>{" "}
                   para procesarla
                 </div>
               )}

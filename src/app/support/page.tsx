@@ -21,8 +21,8 @@ export default async function SupportPage() {
     .single();
 
   // if (profile?.plans && profile.plans?.id === 1) {
-    // if logged in but free plan
-    // redirect("/");
+  // if logged in but free plan
+  // redirect("/");
   // }
   const { data: tickets, error } = await supabase
     .from("tickets")
