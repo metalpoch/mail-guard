@@ -22,7 +22,7 @@ export default function Dashboard({
     <>
       <Navbar user={user} profile={profile} />
       <main className="mb-32">
-        <h1 style={{ textAlign: "center" }}>Dashboard</h1>
+        <h1 style={{ textAlign: "center", marginTop: '50px' }}>Dashboard</h1>
         <div className="dashboard-wrapper">
           <Profile profile={profile} email={user.email} />
           <ApiKey apiKey={apiKey || ""} />

@@ -20,10 +20,10 @@ export default async function SupportPage() {
     .eq("id", user.id)
     .single();
 
-  if (profile?.plans && profile.plans?.id === 1) {
+  // if (profile?.plans && profile.plans?.id === 1) {
     // if logged in but free plan
-    redirect("/");
-  }
+    // redirect("/");
+  // }
   const { data: tickets, error } = await supabase
     .from("tickets")
     .select()
