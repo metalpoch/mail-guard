@@ -3,7 +3,7 @@ import style from "./Profile.module.css";
 
 export default function BinanceButton() {
   return (
-    <Link href="/add-founds" className={style.binanceButton}>
+    <Link href="/add-funds" className={style.binanceButton}>
       +
       <svg
         className="w-6 h-6 text-gray-800 dark:text-white"
