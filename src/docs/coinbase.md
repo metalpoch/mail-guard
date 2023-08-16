@@ -109,6 +109,6 @@ Estos son los eventos que estamos escuchando con el webhook:
 
 - `charge:pending`: Cuando la se realiza la transacción y se esta a la espera por confirmacion.
 
-- `charge:confirmed`: Cuando la transacción es confirmada, en este evento sera donde adjudicaremos el nuevo saldo al balance del usuario.
+- `charge:confirmed`: Cuando la transacción es confirmada, en este evento sera donde adjudicaremos el nuevo saldo al balance del usuario. Esto se consigue ya que en el evento que nos envia Coinbase estara guardado en `metadata` el id del usuario, este se guarda cuando se crea el `charge`.
 
 Más información sobre Coinbase en su [documentación](https://docs.cloud.coinbase.com/commerce/docs/crypto-payments).
