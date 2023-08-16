@@ -6,7 +6,7 @@ Para agregar fondos en la cuenta del usuario, está la opción de utilizar Coinb
 
 Desde la pagina `/add-funds` se selecciona el método de Coinbase, y se selecciona un monto a pagar. Después cuando se hace clic en "Confirmar y pagar" se llamará a la ruta de `/api/coinbase/checkout` donde con el `user_id` del usuario loggeado, se creará un `charge` o intento de pago.
 
-imagen de /add-funds
+![Screenshot_20230815_225246](https://github.com/Jesusml1/mail-guard/assets/40727563/702f823b-a688-4be0-b915-71868c601eb5)
 
 Aqui un ejemplo del `charge` que nos devuelve la API de Coinbase:
 
@@ -93,7 +93,7 @@ Aqui un ejemplo del `charge` que nos devuelve la API de Coinbase:
 
 De todos estos datos, tomaremos el `hosted_url`, para redireccionar al usuario a la pantalla de pagos. Tambien tomaremos el `id` del `charge` y crearemos en supabase un registro en la tabla `payments`, eso si el usuario no posee un `charge` con un status de `NEW`, en dado caso, se le sugerira ir a pagar el la transacción aberta.
 
-Imagen de pantalla de pago
+![Screenshot_20230815_225306](https://github.com/Jesusml1/mail-guard/assets/40727563/70e97f55-ef19-438f-9e24-c05add3b2046)
 
 Después de realizado el pago quedará de parte de Coinbase enviar un request tipo webhook a nosotros para informarnos sobre el estado de la transacción, esto se realiza a través de la ruta de api `/api/coinbase/webhook` la cual se debe agregar al panel de configuración de Coinbase.
 
