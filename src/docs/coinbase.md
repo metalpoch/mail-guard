@@ -95,7 +95,7 @@ De todos estos datos, tomaremos el `hosted_url`, para redireccionar al usuario a
 
 ![Screenshot_20230815_225306](https://github.com/Jesusml1/mail-guard/assets/40727563/70e97f55-ef19-438f-9e24-c05add3b2046)
 
-Después de realizado el pago quedará de parte de Coinbase enviar un request tipo webhook a nosotros para informarnos sobre el estado de la transacción, esto se realiza a través de la ruta de api `/api/coinbase/webhook` la cual se debe agregar al panel de configuración de Coinbase.
+Después de realizado el pago quedará de parte de Coinbase enviar un request tipo webhook a nosotros para informarnos sobre el estado de la transacción, esto se realiza a través de la ruta de api `/api/coinbase/webhook` la cual se debe agregar al panel de configuración de Coinbase. Esta url se debe agregar en en el menu settings > Notifications > Webhooks subscriptions, agregar el endpoint y guardar el shared secret para usarlo como variable de entorno bajo el nombre de `COINBASE_WEBHOOK_SECRET`. Para hacer pruebas en local, se recomienda usar Ngrok, y asi tener un tunel a localhost.
 
 El request tipo webhook nos enviara un evento ocurrido a la transacción, de modo que podemos tomar el tipo del evento y cambiar el estatus de nuestro registro en supabase.
 
