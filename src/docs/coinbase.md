@@ -107,13 +107,13 @@ Aqui un ejemplo del `charge` que nos devuelve la API de Coinbase:
 }
 ```
 
-De todos estos datos, tomaremos el `hosted_url`, para redireccionar al usuario a la pantalla de pagos. Tambien tomaremos el `id` del `charge` y crearemos en supabase un registro en la tabla `payments`, eso si el usuario no posee un `charge` con un status de `NEW`, en dado caso, se le sugerira ir a pagar el la transacción aberta.
+De todos estos datos, tomaremos el `hosted_url`, para redireccionar al usuario a la pantalla de pagos. Tambien tomaremos el `id` del `charge` y crearemos en supabase un registro en la tabla `payments`, eso si el usuario no posee un `charge` con un status de `NEW`, en dado caso, se le sugerira ir a pagar la transacción abierta.
 
 ![Screenshot_20230815_225306](https://github.com/Jesusml1/mail-guard/assets/40727563/70e97f55-ef19-438f-9e24-c05add3b2046)
 
-Después de realizado el pago quedará de parte de Coinbase enviar un request tipo webhook a nosotros para informarnos sobre el estado de la transacción, esto se realiza a través de la ruta de api `/api/coinbase/webhook` la cual se debe agregar al panel de configuración de Coinbase. Esta url se debe agregar en en el menu settings > Notifications > Webhooks subscriptions, agregar el endpoint y guardar el shared secret para usarlo como variable de entorno bajo el nombre de `COINBASE_WEBHOOK_SECRET`. Para hacer pruebas en local, se recomienda usar Ngrok, y asi tener un tunel a localhost.
+Después de realizado el pago quedará de parte de Coinbase enviar un request de tipo webhook a nosotros para informarnos sobre el estado de la transacción, esto se realiza a través de la ruta de api `/api/coinbase/webhook` la cual se debe agregar al panel de configuración de Coinbase. Esta url se debe agregar en en el menu settings > Notifications > Webhooks subscriptions, agregar el endpoint y guardar el shared secret para usarlo como variable de entorno bajo el nombre de `COINBASE_WEBHOOK_SECRET`. Para hacer pruebas en local, se recomienda usar Ngrok, y asi tener un tunel a localhost.
 
-El request tipo webhook nos enviara un evento ocurrido a la transacción, de modo que podemos tomar el tipo del evento y cambiar el estatus de nuestro registro en supabase.
+El request de tipo webhook nos enviara un evento ocurrido a la transacción, de modo que podemos tomar el tipo del evento y cambiar el estatus de nuestro registro en la tabla `payments` en supabase.
 
 Estos son los eventos que estamos escuchando con el webhook:
 
@@ -123,7 +123,7 @@ Estos son los eventos que estamos escuchando con el webhook:
 
 - `charge:canceled`: Cuando el `charge` es cancelado, esto puede hacerse mediante la API de coinbase usando el `id` del `charge`.
 
-- `charge:pending`: Cuando la se realiza la transacción y se esta a la espera por confirmacion.
+- `charge:pending`: Cuando la se realiza la transacción y se esta a la espera por confirmación.
 
 - `charge:confirmed`: Cuando la transacción es confirmada, en este evento sera donde adjudicaremos el nuevo saldo al balance del usuario. Esto se consigue ya que en el evento que nos envia Coinbase estara guardado en `metadata` el id del usuario, este se guarda cuando se crea el `charge`.
 
