@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     const event = coinbase.Webhook.verifyEventBody(
       rawBody,
       webhookHeader,
-      COINBASE_WEBHOOK_SECRET
+      COINBASE_WEBHOOK_SECRET,
     );
 
     let newStatus = PaymentStatus.NEW;
